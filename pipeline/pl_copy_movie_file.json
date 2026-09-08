@@ -80,7 +80,16 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"enableLogging": true
+					"dataset": {
+						"referenceName": "DS_MOVIE_INPUT",
+						"type": "DatasetReference"
+					},
+					"enableLogging": false,
+					"storeSettings": {
+						"type": "AzureBlobFSReadSettings",
+						"recursive": true,
+						"enablePartitionDiscovery": false
+					}
 				}
 			}
 		],
