@@ -10,8 +10,6 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "moviesfile",
-				"folderPath": "output",
 				"fileSystem": "adfbatch10"
 			},
 			"columnDelimiter": ",",
