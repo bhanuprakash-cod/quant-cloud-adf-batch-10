@@ -10,8 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "movies",
-				"folderPath": "output",
+				"fileName": "netflix_titles_nov_2019.csv",
+				"folderPath": "input",
 				"fileSystem": "adfbatch10"
 			},
 			"columnDelimiter": ",",
