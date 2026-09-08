@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "movies",
+				"fileName": "moviesfile",
 				"folderPath": "output",
 				"fileSystem": "adfbatch10"
 			},
