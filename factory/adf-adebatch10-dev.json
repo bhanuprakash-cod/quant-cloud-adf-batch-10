@@ -1,0 +1,15 @@
+{
+	"name": "adf-adebatch10-dev",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6d962f7f-2f14-44c3-ac9b-bb07308d23a5",
+		"tenantId": "ec68451e-223c-4abf-acac-00d6ccec364f"
+	}
+}
