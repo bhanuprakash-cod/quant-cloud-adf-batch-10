@@ -26,7 +26,26 @@
 							"type": "DelimitedTextReadSettings"
 						}
 					},
-					"enableStaging": false
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
 				},
 				"inputs": [
 					{
@@ -34,7 +53,23 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"FolderName": "input",
-							"FileName": "Football.csv"
+							"FileName": {
+								"value": "@pipeline().parameters.SourceFileName",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DS_DYNAMICASSIG_CSV",
+						"type": "DatasetReference",
+						"parameters": {
+							"FolderName": "Output",
+							"FileName": {
+								"value": "@concat(\n    pipeline().parameters.TargetFileName,\n    '_',\n    formatDateTime(utcNow(), 'yyyymmdd_hhmmss')\n    )",
+								"type": "Expression"
+							}
 						}
 					}
 				]
