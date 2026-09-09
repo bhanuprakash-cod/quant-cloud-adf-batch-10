@@ -67,7 +67,7 @@
 						"parameters": {
 							"FolderName": "Output",
 							"FileName": {
-								"value": "@concat(\n    pipeline().parameters.TargetFileName,\n    '_',\n    formatDateTime(utcNow(), 'yyyymmdd_hhmmss')\n    )",
+								"value": "@concat(\n    pipeline().parameters.TargetFileName,\n    '_',\n    formatDateTime(utcNow(), 'yyyyMMdd_HHmmss')\n    )",
 								"type": "Expression"
 							}
 						}
