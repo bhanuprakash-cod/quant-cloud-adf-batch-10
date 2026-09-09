@@ -65,7 +65,7 @@
 						"referenceName": "DS_DYNAMICASSIG_CSV",
 						"type": "DatasetReference",
 						"parameters": {
-							"FolderName": "Output",
+							"FolderName": "output",
 							"FileName": {
 								"value": "@concat(\n    pipeline().parameters.TargetFileName,\n    '_',\n    formatDateTime(utcNow(), 'yyyyMMdd_HHmmss')\n    )",
 								"type": "Expression"
