@@ -2,7 +2,7 @@
 	"name": "DS_LEARNPAR_csv",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage1",
+			"referenceName": "LS_ADLS_GEN2",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -17,7 +17,7 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
+				"type": "AzureBlobFSLocation",
 				"fileName": {
 					"value": "@dataset().FileName",
 					"type": "Expression"
@@ -26,7 +26,7 @@
 					"value": "@dataset().FolderName",
 					"type": "Expression"
 				},
-				"container": "adfbatch10"
+				"fileSystem": "adfbatch10"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
