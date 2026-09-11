@@ -14,7 +14,7 @@
 				"typeProperties": {
 					"variableName": "FileAvailable",
 					"value": {
-						"value": "@true",
+						"value": "@bool('true')",
 						"type": "Expression"
 					}
 				}
