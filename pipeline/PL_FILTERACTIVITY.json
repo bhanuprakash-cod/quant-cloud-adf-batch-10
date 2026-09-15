@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Filter1",
+				"name": "Filter Variables",
 				"type": "Filter",
 				"dependsOn": [],
 				"userProperties": [],
