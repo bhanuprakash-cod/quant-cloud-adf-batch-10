@@ -1,0 +1,59 @@
+{
+	"name": "PL_FOREACHVARIABLES",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('Countries')",
+						"type": "Expression"
+					},
+					"isSequential": true,
+					"activities": [
+						{
+							"name": "If Condition1",
+							"type": "IfCondition",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@contains(variables('Countries'), 'India')",
+									"type": "Expression"
+								},
+								"ifFalseActivities": [
+									{
+										"name": "Fail1",
+										"type": "Fail",
+										"dependsOn": [],
+										"userProperties": [],
+										"typeProperties": {
+											"message": "Country Not Present",
+											"errorCode": "500"
+										}
+									}
+								]
+							}
+						}
+					]
+				}
+			}
+		],
+		"variables": {
+			"Countries": {
+				"type": "Array",
+				"defaultValue": [
+					"India",
+					"Nepal",
+					"Bhutan",
+					"SriLanka",
+					"Singapore"
+				]
+			}
+		},
+		"annotations": []
+	}
+}
