@@ -11,8 +11,32 @@
 		"LS_ADLS_GEN2_accountKey": {
 			"value": ""
 		},
+		"LS_AzureBlob2_connectionString": {
+			"value": ""
+		},
+		"LS_ONPREM_password": {
+			"value": ""
+		},
+		"SqlServer1_password": {
+			"value": ""
+		},
 		"LS_ADLS_GEN2_properties_typeProperties_url": {
 			"value": "https://saadlsbatch10.dfs.core.windows.net/"
+		},
+		"LS_ONPREM_properties_typeProperties_host": {
+			"value": "Bhanu"
+		},
+		"LS_ONPREM_properties_typeProperties_userId": {
+			"value": "bhanu\\bhanu"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "BHANU"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "QUANTCLOUD"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "adf_user"
 		},
 		"containerUri": {
 			"value": ""

@@ -15,9 +15,41 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_GEN2'"
 		},
+		"LS_AzureBlob2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_AzureBlob2'"
+		},
+		"LS_ONPREM_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_ONPREM'"
+		},
+		"SqlServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'SqlServer1'"
+		},
 		"LS_ADLS_GEN2_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://saadlsbatch10.dfs.core.windows.net/"
+		},
+		"LS_ONPREM_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "Bhanu"
+		},
+		"LS_ONPREM_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "bhanu\\bhanu"
+		},
+		"SqlServer1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "BHANU"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "QUANTCLOUD"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adf_user"
 		},
 		"containerUri": {
 			"type": "string",
@@ -52,12 +84,56 @@
 					"LS_ADLS_GEN2_accountKey": {
 						"value": "[parameters('LS_ADLS_GEN2_accountKey')]"
 					},
+					"LS_AzureBlob2_connectionString": {
+						"value": "[parameters('LS_AzureBlob2_connectionString')]"
+					},
+					"LS_ONPREM_password": {
+						"value": "[parameters('LS_ONPREM_password')]"
+					},
 					"LS_ADLS_GEN2_properties_typeProperties_url": {
 						"value": "[parameters('LS_ADLS_GEN2_properties_typeProperties_url')]"
+					},
+					"LS_ONPREM_properties_typeProperties_host": {
+						"value": "[parameters('LS_ONPREM_properties_typeProperties_host')]"
+					},
+					"LS_ONPREM_properties_typeProperties_userId": {
+						"value": "[parameters('LS_ONPREM_properties_typeProperties_userId')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "adf-adebatch10-dev_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"SqlServer1_password": {
+						"value": "[parameters('SqlServer1_password')]"
+					},
+					"SqlServer1_properties_typeProperties_server": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
+					},
+					"SqlServer1_properties_typeProperties_database": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_database')]"
+					},
+					"SqlServer1_properties_typeProperties_userName": {
+						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf-adebatch10-dev_ArmTemplate_0')]"
+			]
 		}
 	]
 }
