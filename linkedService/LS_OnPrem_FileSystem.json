@@ -5,9 +5,9 @@
 		"annotations": [],
 		"type": "FileServer",
 		"typeProperties": {
-			"host": "Bhanu",
+			"host": "192.168.101.166",
 			"userId": "bhanu\\bhanu",
-			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJkZWUwNjc4Ni1mMmJjLTQ1N2UtOWMwZC0zYzEwNDNmYjFlNmEiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJlZTAzMTU2Ni0wYjNiLTQ3YzItYjJjMC05NjhlYTA4OThhMDgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
 		},
 		"connectVia": {
 			"referenceName": "SHIRONPREM",
