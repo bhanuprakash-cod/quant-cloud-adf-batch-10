@@ -1,0 +1,23 @@
+{
+	"name": "OnPrem_Sink_Dataset",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "FileSystem_Ls_Op",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "FileServerLocation",
+				"fileName": "On_Output",
+				"folderPath": "Destination"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
