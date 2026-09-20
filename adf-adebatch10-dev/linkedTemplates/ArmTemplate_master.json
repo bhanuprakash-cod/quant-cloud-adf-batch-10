@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
 		},
+		"FileSystem_Ls_Op_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'FileSystem_Ls_Op'"
+		},
 		"LS_ADLS_GEN2_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_GEN2'"
@@ -19,6 +23,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_AzureBlob2'"
 		},
+		"LS_AzureBlob_Op_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_AzureBlob_Op'"
+		},
 		"LS_ONPREM_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_ONPREM'"
@@ -26,6 +34,14 @@
 		"SqlServer1_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServer1'"
+		},
+		"FileSystem_Ls_Op_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "\\\\localhost\\ADFShare"
+		},
+		"FileSystem_Ls_Op_properties_typeProperties_userId": {
+			"type": "string",
+			"defaultValue": "BHANU\\Bhanu"
 		},
 		"LS_ADLS_GEN2_properties_typeProperties_url": {
 			"type": "string",
@@ -87,17 +103,11 @@
 					"LS_AzureBlob2_connectionString": {
 						"value": "[parameters('LS_AzureBlob2_connectionString')]"
 					},
-					"LS_ONPREM_password": {
-						"value": "[parameters('LS_ONPREM_password')]"
+					"LS_AzureBlob_Op_connectionString": {
+						"value": "[parameters('LS_AzureBlob_Op_connectionString')]"
 					},
 					"LS_ADLS_GEN2_properties_typeProperties_url": {
 						"value": "[parameters('LS_ADLS_GEN2_properties_typeProperties_url')]"
-					},
-					"LS_ONPREM_properties_typeProperties_host": {
-						"value": "[parameters('LS_ONPREM_properties_typeProperties_host')]"
-					},
-					"LS_ONPREM_properties_typeProperties_userId": {
-						"value": "[parameters('LS_ONPREM_properties_typeProperties_userId')]"
 					}
 				}
 			},
@@ -117,8 +127,26 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"FileSystem_Ls_Op_password": {
+						"value": "[parameters('FileSystem_Ls_Op_password')]"
+					},
+					"LS_ONPREM_password": {
+						"value": "[parameters('LS_ONPREM_password')]"
+					},
 					"SqlServer1_password": {
 						"value": "[parameters('SqlServer1_password')]"
+					},
+					"FileSystem_Ls_Op_properties_typeProperties_host": {
+						"value": "[parameters('FileSystem_Ls_Op_properties_typeProperties_host')]"
+					},
+					"FileSystem_Ls_Op_properties_typeProperties_userId": {
+						"value": "[parameters('FileSystem_Ls_Op_properties_typeProperties_userId')]"
+					},
+					"LS_ONPREM_properties_typeProperties_host": {
+						"value": "[parameters('LS_ONPREM_properties_typeProperties_host')]"
+					},
+					"LS_ONPREM_properties_typeProperties_userId": {
+						"value": "[parameters('LS_ONPREM_properties_typeProperties_userId')]"
 					},
 					"SqlServer1_properties_typeProperties_server": {
 						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
