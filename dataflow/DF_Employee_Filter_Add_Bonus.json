@@ -40,7 +40,7 @@
 				"          salary = toInteger(byName('salary'))) ~> AddBonuscolumn",
 				"AddBonuscolumn sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     partitionFileNames:['Filtered_Employee'],",
+				"     partitionFileNames:['Filtered_Employee_bonus'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
 				"     partitionBy('hash', 1)) ~> sink"
