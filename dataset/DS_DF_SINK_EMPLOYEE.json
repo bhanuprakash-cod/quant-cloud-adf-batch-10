@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "Filtered_employee",
+				"folderPath": "DATAFLOWS",
 				"container": "sink"
 			},
 			"columnDelimiter": ",",
